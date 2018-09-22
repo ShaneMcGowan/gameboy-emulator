@@ -1,0 +1,8 @@
+C:\Repos\GameboyEmulator\GameboyEmulator\bin\Debug\game.gb
+C:\Repos\GameboyEmulator\GameboyEmulator\bin\Debug\GameboyEmulator.exe.config
+C:\Repos\GameboyEmulator\GameboyEmulator\bin\Debug\GameboyEmulator.exe
+C:\Repos\GameboyEmulator\GameboyEmulator\bin\Debug\GameboyEmulator.pdb
+C:\Repos\GameboyEmulator\GameboyEmulator\obj\Debug\GameboyEmulator.csprojResolveAssemblyReference.cache
+C:\Repos\GameboyEmulator\GameboyEmulator\obj\Debug\GameboyEmulator.csproj.CoreCompileInputs.cache
+C:\Repos\GameboyEmulator\GameboyEmulator\obj\Debug\GameboyEmulator.exe
+C:\Repos\GameboyEmulator\GameboyEmulator\obj\Debug\GameboyEmulator.pdb
