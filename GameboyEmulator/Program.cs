@@ -25,6 +25,7 @@ namespace GameboyEmulator
             Console.WriteLine("\n hex");
 
             Disassembler disassembler = new Disassembler();
+            CPU cpu = new CPU();
 
             disassembler.DisassembleROM(rom);
 
