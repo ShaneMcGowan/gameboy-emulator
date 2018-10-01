@@ -24,12 +24,11 @@ namespace GameboyEmulator
 
             Console.WriteLine("\n hex");
 
-            Disassembler disassembler = new Disassembler();
+            // Disassembler disassembler = new Disassembler();
+            // disassembler.DisassembleROM(rom);
             CPU cpu = new CPU();
-
-            disassembler.DisassembleROM(rom);
-
-
+            cpu.Go(rom);
+            
             Console.ReadKey();
 
         }
