@@ -53,6 +53,7 @@ namespace GameboyEmulator
                     //  bytes[position + 2]
                     //  bytes[position + 1]
                     PC += 3;
+                    throw new OPCodeUnimplementedException(1, "Not Implemented", this);
                     break;
                 case 0x02:
                     // LD (BC),A
@@ -68,11 +69,13 @@ namespace GameboyEmulator
                     break;
                 case 0x05:
                     // DEC B
-                    throw new OPCodeUnimplementedException(1, "Not Implemented",this); 
+                    
+                    B -= 1;
+                    PC += 1;
                     break;
                 case 0x06:
-                    //  LD B,d8
-                    //  bytes[position + 1]
+                    // LD B, d8
+                    Load8Bit(ref this.B, bytes[PC + 1]);
                     PC += 2;
                     break;
                 case 0x07:
@@ -84,6 +87,7 @@ namespace GameboyEmulator
                     //  bytes[position + 2]
                     //  bytes[position + 1]
                     PC += 3;
+                    throw new OPCodeUnimplementedException(1, "Not Implemented", this);
                     break;
                 case 0x09:
                     // ADD HL,BC
@@ -254,7 +258,16 @@ namespace GameboyEmulator
                     break;
                 case 0x32:
                     // LD (HL-),A
-                    throw new OPCodeUnimplementedException(1, "Not Implemented",this); 
+                    L = 0;
+                    H = A;
+
+                    UInt16 HL = (UInt16)(L << 8 | H);
+                    HL -= 1;
+
+                    H = (byte)HL;
+                    L = (byte)(HL >> 8);
+
+                    PC += 1;
                     break;
                 case 0x33:
                     // INC SP
@@ -1068,6 +1081,11 @@ namespace GameboyEmulator
 
             return (UInt16)(big << 8 | little);
         }
+
+        private void Load8Bit(ref byte target, byte value) {
+            target = value;
+        }
+
     }
 
 
